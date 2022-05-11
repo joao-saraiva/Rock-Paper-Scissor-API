@@ -43,16 +43,22 @@ function decideWinner(playersOptions){
     let playerTwoOption = playersOptions[1].option
 
     if( ( playerOneOption.toLowerCase() == 'paper' || playerTwoOption.toLowerCase() == 'paper' ) && ( playerOneOption.toLowerCase() == 'rock' || playerTwoOption.toLowerCase() == 'rock' ) ){
+        let winner = playerOneOption.toLowerCase() == 'paper'  ? playersOptions[0].id : playersOptions[1].id;
         return {
-            result: `Winner is: ${playerOneOption.toLowerCase() == 'paper' ? playersOptions[0].id : playersOptions[1].id}`
+            winnerId: winner,
+            result: `Winner is: ${winner}`
         }
-    }else if( ( playerOneOption.toLowerCase() == 'rock' || playerTwoOption.toLowerCase() == 'rock' ) && ( playerOneOption.toLowerCase() == 'scissor' || playerTwoOption.toLowerCase() == 'scissor' ) ){
+    }else if( ( playerOneOption.toLowerCase() == 'rock' || playerTwoOption.toLowerCase() == 'rock' ) && ( playerOneOption.toLowerCase() == 'scissors' || playerTwoOption.toLowerCase() == 'scissors' ) ){
+        let winner = playerOneOption.toLowerCase() == 'rock'  ? playersOptions[0].id : playersOptions[1].id;
         return {
-            result: `Winner is: ${playerOneOption.toLowerCase() == 'rock' ? playersOptions[0].id : playersOptions[1].id}`
+            winnerId: winner,
+            result: `Winner is: ${winner}`
         }
-    }else if( ( playerOneOption.toLowerCase() == 'scissor' || playerTwoOption.toLowerCase() == 'scissor' ) && ( playerOneOption.toLowerCase() == 'paper' || playerTwoOption.toLowerCase() == 'paper' ) ){
+    }else if( ( playerOneOption.toLowerCase() == 'scissors' || playerTwoOption.toLowerCase() == 'scissors' ) && ( playerOneOption.toLowerCase() == 'paper' || playerTwoOption.toLowerCase() == 'paper' ) ){
+        let winner = playerOneOption.toLowerCase() == 'scissors'  ? playersOptions[0].id : playersOptions[1].id;
         return {
-            result: `Winner is: ${playerOneOption.toLowerCase() == 'scissor' ? playersOptions[0].id : playersOptions[1].id}`
+            winnerId: winner,
+            result: `Winner is: ${winner}`
         }
     }else{
         return {
